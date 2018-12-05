@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class BookRow extends Component {
   render() {
@@ -8,7 +9,9 @@ class BookRow extends Component {
         <td>{book.title}</td>
         <td>
           {book.authors.map(author => (
-            <div key={author.name}>{author.name}</div>
+            <Link to={`/authors/${author.id}`}>
+              <div key={author.name}>{author.name}</div>
+            </Link>
           ))}
         </td>
         <td>
